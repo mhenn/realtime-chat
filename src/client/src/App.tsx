@@ -7,7 +7,7 @@ import Switch from './Routes';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App min-h-screen bg-stone-900">
       <header className="">
       </header>
       <Router basename="/">
