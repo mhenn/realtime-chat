@@ -1,21 +1,21 @@
 import create from 'zustand'
 
 interface ChatState {
-  user:string
   email:string
+  pw: string
   count: number
   increase: () => void
-  setName: (to: string) => void
-  setMail: (to: string) => void
+  setEmail: (to: string) => void
+  setPw: (to: string) => void
 }
 
 const useStore = create<ChatState>()((set) => ({
-  user: '',
   email: '',
+  pw: '',
   count: 0,
   increase: () => set((state) => ({ count: state.count + 1 })),
-  setName: (to) => set((state) => ({user: to})),
-  setMail: (to) => set((state) => ({email: to}))
+  setEmail: (to) => set((state) => ({email: to})),
+  setPw: (to) => set((state) => ({pw: to}))
 }))
 
 export default useStore

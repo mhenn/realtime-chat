@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import useStore from '../utils/state'
 import { supabase } from '../utils/supabaseClient'
+import Input from './Input'
+
 
 export default function Auth() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const {email, pw, setEmail, setPw} = useStore();
   const [loading, setLoading] = useState('')
 
   const handleLogin = async (type: string, email: string, password: string) => {
@@ -29,28 +30,14 @@ export default function Auth() {
         ) : (
           <form>
           <div className="flex flex-col">
-            <input
-              id="email"
-              className="mt-4 text-gray-800 rounded w-full py-3 px-8 bg-slate-200 placeholder:font-semibold  hover:ring-1"
-              type="email"
-              placeholder="Your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-         <input
-              id="password"
-              className="mt-4 w-full py-3 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1  "
-              type="password"
-              placeholder="Your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+          <Input value={email} type="email" placeholder="Your Email" handler={setEmail}/>
+          <Input value={pw} type="password" placeholder="Your Password" handler={setPw}/>
             </div>
             <div className="flex flex-row mt-4">
-            <button className="mr-2 py-4 bg-slate-700 w-full rounded text-blue-50 font-bold " aria-live="polite" onClick={() => handleLogin("LOGIN", email, password)}>
+            <button className="mr-2 py-4 bg-slate-700 w-full rounded text-blue-50 font-bold " aria-live="polite" onClick={() => handleLogin("LOGIN", email, pw)}>
             Login
             </button>
-            <button className="ml-2 py-4 bg-slate-700 w-full rounded text-blue-50 font-bold " aria-live="polite" onClick={() => handleLogin("SIGNUP", email, password)}>
+            <button className="ml-2 py-4 bg-slate-700 w-full rounded text-blue-50 font-bold " aria-live="polite" onClick={() => handleLogin("SIGNUP", email, pw)}>
              Sign up
             </button>
             </div>
