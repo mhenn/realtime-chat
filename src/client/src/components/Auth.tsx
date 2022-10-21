@@ -23,7 +23,7 @@ export default function Auth() {
 
   return (
     <div className="row w-1/3 flex-col flex mx-auto">
-      <div className=" w-full  m-auto bg-stone-800 p-4 rounded-lg text-gray-200 font-mono" aria-live="polite">
+      <div className=" w-full  m-auto bg-stone-800 p-4 rounded-lg text-gray-200 font-mono" >
         <h1 className="header">Supabase + React</h1>
         {loading ? (
           ' Magic ...'
@@ -34,10 +34,14 @@ export default function Auth() {
           <Input value={pw} type="password" placeholder="Your Password" handler={setPw}/>
             </div>
             <div className="flex flex-row mt-4">
-            <button className="mr-2 py-4 bg-slate-700 w-full rounded text-blue-50 font-bold " aria-live="polite" onClick={() => handleLogin("LOGIN", email, pw)}>
+            <button className="mr-2 py-4 bg-slate-700 w-full rounded
+            text-blue-50 font-bold " onClick={() => handleLogin("LOGIN", email,
+            pw)}>
             Login
             </button>
-            <button className="ml-2 py-4 bg-slate-700 w-full rounded text-blue-50 font-bold " aria-live="polite" onClick={() => handleLogin("SIGNUP", email, pw)}>
+            <button className="ml-2 py-4 bg-slate-700 w-full rounded
+            text-blue-50 font-bold " onClick={() => handleLogin("SIGNUP",
+            email, pw)}>
              Sign up
             </button>
             </div>
