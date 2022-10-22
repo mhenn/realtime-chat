@@ -15,9 +15,10 @@ export const UserContextProvider = (props: any) => {
   const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
-    const session = await supabase.auth.getSession()
+      supabase.auth.getSession().then(({data: {session}}) => {
     setSession(session)
-    setUser(session?.user ?? null)
+
+          })
     const { data: authListener } = supabase.auth.onAuthStateChange(async (event, session) => {
       console.log(`Supabase auth event: ${event}`)
       setSession(session)
@@ -25,9 +26,8 @@ export const UserContextProvider = (props: any) => {
     })
 
     return () => {
-      authListener!.unsubscribe()
+      authListener.subscription.unsubscribe()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const value = {
