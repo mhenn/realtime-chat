@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Routes} from 'react-router-dom';
 import ChatPage from "./pages/ChatPage";
-import AuthPage from "./pages/AuthPage";
+import ConfigPage from "./pages/ConfigPage";
 
 /**
  * Routes component containing routes for the whole application
@@ -9,8 +9,8 @@ import AuthPage from "./pages/AuthPage";
  */
 const Switch = () => (
     <Routes>
-        <Route  path='/' element={<AuthPage/>} />
-        <Route  path='/chat' element={<ChatPage/>} />
+        <Route  path='/' element={<ChatPage/>} />
+        <Route  path='/config' element={<ConfigPage/>} />
     </Routes>
 );
 
