@@ -6,7 +6,6 @@ import './App.css';
 import Switch from './Routes';
 
 
-
 const Base = () =>{
     return(
       <Router basename="/">
