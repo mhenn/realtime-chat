@@ -29,7 +29,7 @@ export default function Registration() {
                 <button className="mr-2 py-4 bg-slate-700 w-full rounded
             text-blue-50 font-bold " onClick={() => handleRegistration(email,
                     pw, fullname, username)}>
-                    Login
+                    Register
                 </button>
                 <button className="ml-2 py-4 bg-slate-700 w-full rounded
             text-blue-50 font-bold " onClick={() => setShowRegistration(false)}>
