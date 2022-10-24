@@ -1,5 +1,6 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { UserContextProvider, useUser } from './utils/UserContext';
+import { QueryContext } from './utils/QueryContext';
 import AuthPage from './pages/AuthPage';
 import './App.css';
 import Switch from './Routes';
@@ -18,15 +19,16 @@ const Container = () => {
 }
 
 function App() {
-
     return (
-        <UserContextProvider>
-            <div className="App min-h-screen bg-stone-900">
-                <header className="">
-                </header>
-                <Container />
-            </div>
-        </UserContextProvider>
+        <QueryContext>
+            <UserContextProvider>
+                <div className="App min-h-screen bg-stone-900">
+                    <header className="">
+                    </header>
+                    <Container />
+                </div>
+            </UserContextProvider>
+        </QueryContext>
     );
 }
 
