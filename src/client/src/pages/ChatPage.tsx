@@ -1,7 +1,8 @@
+import SideBar from '../components/SideBar'
+
 import { useQuery } from '@tanstack/react-query'
 import { supabase } from '../utils/supabaseClient'
 import useStore from '../utils/state'
-import { ReactElement } from 'react';
 import { JsxElement } from 'typescript';
 
 const userDetailQuery = (id: string) => ({
@@ -27,6 +28,15 @@ export default function ChatPage() {
     return (
 
 
-        <div>ChatPage</div>
+        <div className="flex flex-col">
+            <SideBar />
+            <div className="flex flex-col w-5/6 h-screen ml-auto">
+                <div className="w-1/2">
+
+                </div>
+                <textarea>
+                </textarea>
+            </div>
+        </div>
     )
 }

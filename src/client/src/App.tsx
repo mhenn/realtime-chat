@@ -34,7 +34,6 @@ function App() {
                     <Container />
                 </div>
             </UserContextProvider>
-            <ReactQueryDevtools initialIsOpen={true}/>
         </QueryClientProvider >
     );
 }
