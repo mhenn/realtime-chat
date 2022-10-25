@@ -1,6 +1,7 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { UserContextProvider, useUser } from './utils/UserContext';
-import { QueryContext } from './utils/QueryContext';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AuthPage from './pages/AuthPage';
 import './App.css';
 import Switch from './Routes';
@@ -18,9 +19,14 @@ const Container = () => {
     return user ? <Base /> : <AuthPage />
 }
 
+
+
+
+const queryClient = new QueryClient();
+
 function App() {
     return (
-        <QueryContext>
+        <QueryClientProvider client={queryClient}>
             <UserContextProvider>
                 <div className="App min-h-screen bg-stone-900">
                     <header className="">
@@ -28,7 +34,8 @@ function App() {
                     <Container />
                 </div>
             </UserContextProvider>
-        </QueryContext>
+            <ReactQueryDevtools initialIsOpen={true}/>
+        </QueryClientProvider >
     );
 }
 

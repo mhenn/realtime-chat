@@ -4,25 +4,19 @@ import useStore from '../utils/state'
 import Input from './Input'
 
 
-
-
 export default function Login() {
-    const { email, pw, setEmail, setPw, setShowRegistration } = useStore();
+    const { email, pw, setEmail, setPw, setShowRegistration, setUserId } = useStore();
 
     const handleLogin = async (mail: string, password: string) => {
-        console.log("ag:" + mail);
-        console.log(password);
         const { error, data } =
             await supabase.auth.signInWithPassword({
                 email: mail,
                 password: password
             })
-        console.log(error);
-        console.log(data);
         if (!error && !data.user) alert('Check your email for the login link!')
         if (error) alert(error.message)
+        setUserId(data.user?.id ?? '');
     }
-
 
     return (
         <div className="flex flex-col">
