@@ -1,5 +1,5 @@
-import { supabase } from '../utils/supabaseClient'
-import useStore from '../utils/state'
+import { supabase } from '../utils/SupabaseClient'
+import useStore from '../utils/State'
 
 import Input from './Input'
 

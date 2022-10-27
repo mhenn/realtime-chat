@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query"
-import useStore from '../utils/state'
-import { supabase } from '../utils/supabaseClient'
+import useStore from '../utils/State'
+import { supabase } from '../utils/SupabaseClient'
 import Input from './Input'
 
 interface User {

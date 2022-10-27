@@ -34,7 +34,7 @@ function App() {
                     <Container />
                 </div>
             </UserContextProvider>
-            <ReactQueryDevtools/>
+            <ReactQueryDevtools />
         </QueryClientProvider >
     );
 }

@@ -1,5 +1,5 @@
 import useDetailQuery from '../utils/Queries'
-import useStore from '../utils/state'
+import useStore from '../utils/State'
 
 export default function SideBar() {
     const { userId } = useStore();

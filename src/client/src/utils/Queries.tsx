@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { supabase } from '../utils/supabaseClient'
+import { supabase } from '../utils/SupabaseClient'
 
 
 const useDetailQuery = (id: string) => {
