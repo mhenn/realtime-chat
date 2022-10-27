@@ -1,16 +1,21 @@
+import useDetailQuery from '../utils/Queries'
+import useStore from '../utils/state'
 
 export default function SideBar() {
+    const { userId } = useStore();
+    const { status, data, error } = useDetailQuery(userId);
     return (
         <div className="flex flex-col bg-slate-700 w-1/6 h-screen px-4 tex-gray-900 border border-purple-900">
             <div className="flex flex-wrap mt-8">
                 <div className="w-1/2">
                     <img
+                        onClick={() => console.log(data)}
                         src="https://randomuser.me/api/portraits/women/27.jpg"
                         className="mx-auto w-20 h-20 rounded-full"
                     />
                 </div>
                 <div className="w-1/2">
-                    <span className="font-semibold text-white">Ava Harper</span>
+                    <span className="font-semibold text-white">{status == 'success' ? data.data[0].name : 'None'}</span>
                 </div>
             </div>
             <div className="mt-10 mb-4">

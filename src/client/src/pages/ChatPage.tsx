@@ -1,19 +1,12 @@
 import SideBar from '../components/SideBar'
 
-import { useQuery } from '@tanstack/react-query'
-import { supabase } from '../utils/supabaseClient'
+import useDetailQuery from '../utils/Queries'
 import useStore from '../utils/state'
 
-const userDetailQuery = (id: string) => ({
-    queryKey: ["users", id],
-    queryFn: async () => {
-        return supabase.from('users').select('*')
-    }
-});
 
 export default function ChatPage() {
     const { userId } = useStore();
-    const { isLoading, error, data } = useQuery(userDetailQuery(userId));
+    const { isLoading, error, data } = useDetailQuery(userId);
 
     const Loading = () => {
         return <span>Loading...</span>
