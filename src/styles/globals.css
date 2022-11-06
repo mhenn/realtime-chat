@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.circle-7xl{
+    border-radius: 9999px;
+    width:70vw;
+    height:70vw;
+}
+
+.circle-center{
+    left:15%;
+    top:25%;
+
+}
+
+.glow{
+box-shadow: 0px 0px 50px -10px rgb(255, 255, 205);
+}
+
+
+
