@@ -1,19 +1,38 @@
 import Head from 'next/head'
-import React, { useEffect } from 'react'
-import { io } from 'socket.io'
+import React, { useEffect, useState } from 'react'
+import { io } from 'socket.io-client'
 
 
-let socket
 
-const index = () => {
+const Chat = () => {
 
-    useEffect(() => {
+    const [chat, setChat] = useState<string[]>([])
+    const [msg, setMsg] = useState<string>()
+
+    useEffect((): any => {
         socketInit()
+        const socket = io({ path: '/api/socketio' })
+
+        socket.on("message", (message: string) => {
+            console.log(message)
+        })
+
+        if (socket) return () => socket.disconnect();
+
     }, [])
 
     const socketInit = async () => {
-        await fetch("/api/socketio")
-        socket = io()
+    }
+
+    const sendMessage = async () => {
+        let res = await fetch('/api/chat/bob', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify("get fucked"),
+        })
+
     }
 
     return (
@@ -36,4 +55,4 @@ const index = () => {
     )
 }
 
-export default index
+export default Chat

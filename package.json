@@ -25,6 +25,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "socket.io": "^4.5.3",
+    "socket.io-client": "^4.5.3",
     "superjson": "1.9.1",
     "tls": "^0.0.1",
     "zod": "^3.18.0"
@@ -47,5 +48,10 @@
   },
   "ct3aMetadata": {
     "initVersion": "6.8.0"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   }
 }
