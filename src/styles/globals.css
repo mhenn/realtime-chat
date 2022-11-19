@@ -5,16 +5,48 @@
 
 .circle-7xl{
     border-radius: 9999px;
-    width:70vw;
-    height:70vw;
+    width:70vw!important;
+    height:70vw!important;
+}
+
+.circle-5xl{
+    border-radius: 9999px;
+    width:50vw!important;
+    height:50vw!important;
 }
 
 .circle-center{
     left:15%;
     top:25%;
+    animation: rotating 8s linear infinite;
 
+}
+
+@keyframes rotating{
+from {
+    transform: rotate(0deg)
+}
+to {
+    transform: rotate(359deg)
+
+}
+}
+
+
+circle-border{
+    border-width: 2px 2px 0px 0px;
 }
 
 .glow{
 box-shadow: 0px 0px 50px -10px rgb(255, 255, 205);
+}
+
+.z--10{
+    z-index: -10;
+}
+
+.polka{
+  background-image: radial-gradient(rgb(87 83 78) 1px, transparent 0);
+  background-size: 120px 120px;
+  background-position: -19px -19px;
 }
