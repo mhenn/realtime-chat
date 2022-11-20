@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+textarea{
+    resize:none;
+}
+
 .circle-container{
   position: absolute;
   left: 50%;

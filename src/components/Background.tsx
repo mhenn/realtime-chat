@@ -11,9 +11,9 @@ const Background: FunctionComponent = (props: any) => {
                     <div className="mx-auto my-auto absolute border-r-2 border-t-2  border-stone-700  circle-5xl reverse circle "></div>
                     <div className="mx-auto my-auto absolute border-r-2 border-t-2  border-stone-800  circle-3xl circle "></div>
                 </div>
-            <div className="absolute middle z-50">
-                {props.children}
-            </div>
+                <div className="absolute middle z-50">
+                    {props.children}
+                </div>
             </div>
         </div>
     )
